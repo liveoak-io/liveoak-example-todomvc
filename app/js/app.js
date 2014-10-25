@@ -12,7 +12,7 @@ var todomvc = angular.module('todomvc', [ 'ngRoute', 'ngResource' ]);
 angular.element(document).ready(function () {
     var liveOak = LiveOak({
         auth: {
-            clientId: 'todomvc-html-client',
+            clientId: 'liveoak.client.todomvc-html.todomvc-html-client',
             realm: 'liveoak-apps'
         }
     });
