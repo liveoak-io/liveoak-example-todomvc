@@ -55,7 +55,7 @@ But it's useful as self-registered users always have just default roles (in our 
   * Repeat the steps again and create last user "mary" and don't assign her to any role
 
 * Create new collection in MongoDB (Manual step currently required)
-  * Go to [http://localhost:8080/admin#/applications/todomvc/storage/storage/browse](http://localhost:8080/admin#/applications/todomvc/storage/storage/browse)
+  * Go to [http://localhost:8080/admin#/applications/todomvc/storage/storage/browse](http://localhost:8080/admin#/applications/todomvc/storage/storage/browse) or navigate to the "Storage" page of the application and then select the "storage" resource.
   * Click "New collection" > Fill collection name "todos" (name is important as it's used by the application) > Click "Add"
   * This step is not mandatory because in case that you first login as some admin user (in our case user "bob"), collection will be automatically created during first access to application. But in case that you're using just self-registered users, it will be needed.
 
