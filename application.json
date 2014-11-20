@@ -1,6 +1,6 @@
 {
   "html-app" : "/app/index.html",
-  "example" : true,
+  "example" : "todomvc",
   "resources" : {
     "app" : {
       "type" : "filesystem",
