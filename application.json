@@ -87,13 +87,7 @@
     "storage" : {
       "type" : "mongo",
       "config" : {
-        "db" : "todomvc",
-        "servers" : [
-          {
-            "host" : "localhost",
-            "port" : 27017
-          }
-        ]
+        "db" : "todomvc"
       }
     }
 
