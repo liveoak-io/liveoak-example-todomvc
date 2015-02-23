@@ -12,14 +12,14 @@ var todomvc = angular.module('todomvc', [ 'ngRoute', 'ngResource' ]);
 angular.element(document).ready(function () {
     var liveOak = LiveOak({
         auth: {
-            clientId: 'liveoak.client.todomvc.todomvc-html-client',
+            appClientId: 'todomvc-html-client',
             realm: 'liveoak-apps'
         }
     });
 
     liveOak.auth.init({ onLoad: 'login-required' }).success(function () {
         if (liveOak.auth.hasResourceRole('admin', 'todomvc')) {
-            liveOak.create('/todomvc/storage', { id: 'todos' }, {
+            liveOak.app().create('/storage', { id: 'todos' }, {
                 success: function (data) {
                 },
                 error: function (data) {
