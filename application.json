@@ -1,6 +1,7 @@
 {
   "html-app" : "/app/index.html",
   "example" : "todomvc",
+  "configuration-files" : ["app/index.html"],
   "resources" : {
     "app" : {
       "type" : "filesystem",
@@ -33,12 +34,12 @@
         "policies" : [
           {
             "policyName" : "URIPolicy",
-            "policyResourceEndpoint" : "/todomvc/uri-policy/authzCheck"
+            "policyResourceEndpoint" : "/${application.id}/uri-policy/authzCheck"
           },
           {
             "policyName" : "ACLPolicy",
-            "policyResourceEndpoint" : "/todomvc/acl-policy/authzCheck",
-            "includedResourcePrefixes" : [ "/todomvc/storage" ]
+            "policyResourceEndpoint" : "/${application.id}/acl-policy/authzCheck",
+            "includedResourcePrefixes" : [ "/${application.id}/storage" ]
           }
         ]
       }
@@ -49,7 +50,7 @@
       "config" : {
         "autoRules" : [
           {
-            "resourcePath" : "/todomvc/storage/todos",
+            "resourcePath" : "/${application.id}/storage/todos",
             "autoAddedOwnerPermissions" : [ "READ", "UPDATE", "DELETE" ]
           }
         ]
@@ -66,19 +67,19 @@
             "allowedUsers" : [ "*" ]
           },
           {
-            "uriPattern" : "/todomvc/storage/todos",
+            "uriPattern" : "/${application.id}/storage/todos",
             "requestTypes" : [ "UPDATE" ],
-            "allowedRoles" : [ "todomvc/admin" ]
+            "allowedRoles" : [ "${application.id}/admin" ]
           },
           {
-            "uriPattern" : "/todomvc/storage/todos",
+            "uriPattern" : "/${application.id}/storage/todos",
             "requestTypes" : [ "CREATE", "READ" ],
-            "allowedRoles" : [ "todomvc/user", "todomvc/admin" ]
+            "allowedRoles" : [ "${application.id}/user", "${application.id}/admin" ]
           },
           {
-            "uriPattern" : "/todomvc/storage/todos/*",
+            "uriPattern" : "/${application.id}/storage/todos/*",
             "requestTypes" : [ "READ", "UPDATE", "DELETE" ],
-            "allowedRoles" : [ "todomvc/admin" ]
+            "allowedRoles" : [ "${application.id}/admin" ]
           }
         ]
       }
@@ -87,7 +88,7 @@
     "storage" : {
       "type" : "mongo",
       "config" : {
-        "db" : "todomvc"
+        "db" : "${application.id}"
       }
     }
 
