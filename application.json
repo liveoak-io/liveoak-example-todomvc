@@ -17,6 +17,10 @@
       }
     },
 
+    "application-clients" : {
+      "type" : "application-clients"
+    },
+
     "css" : {
       "type" : "aggregating-filesystem",
       "config" : {
